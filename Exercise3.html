@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise3</title>
+</head>
+<body>
+    <a href="Exercise2.html">Previous Exercise</a>
+    <a href="index.html">Home page</a>
+    <a href="Exercise4.html">Next Exercise</a>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .media-section {
+            margin-bottom: 40px;
+        }
+        iframe, audio {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .pdf-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: #007BFF;
+        }
+        .pdf-link a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Media Page</h1>
+
+        <!-- YouTube Video Section -->
+        <div class="media-section">
+            <h2>YouTube Video</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/KhqNTjbQ71A" 
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <!-- Audio Section -->
+        <div class="media-section">
+            <h2>Audio File</h2>
+            <audio controls>
+                <source src="song.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+
+        <!-- PDF Download Link -->
+        <div class="media-section">
+            <h2>Download PDF</h2>
+            <p class="pdf-link">
+                <a href="example.pdf" download>Click here to download the PDF file</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

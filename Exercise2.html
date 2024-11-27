@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise2</title>
+</head>
+<body>
+    <a href="Exercise1.html">Previous Exercise</a>
+    <a href="index.html">Home page</a>
+    <a href="Exercise3.html">Next Exercise</a>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        form {
+            background-color: #fff;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+        }
+        .checkbox-label input {
+            width: auto;
+            margin-right: 10px;
+        }
+    </style>
+
+    <form action="#" method="POST" onsubmit="return validatePassword()">
+        <h2>Event Registration</h2>
+
+        <!-- Full Name -->
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required placeholder="Enter your full name">
+
+        <!-- Email Address -->
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email address" />
+
+        <!-- Password -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="8" placeholder="Enter a password (min 8 characters)" />
+
+        <!-- Confirm Password -->
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required minlength="8" placeholder="Confirm your password" />
+
+        <!-- Show Password Checkbox -->
+        <div class="checkbox-label">
+            <input type="checkbox" id="show-password" onclick="togglePassword()"> 
+            <label for="show-password">Show Password</label>
+        </div>
+
+        <!-- Event Date -->
+        <label for="eventdate">Date of birth:</label>
+        <input type="date" id="eventdate" name="eventdate" required />
+
+        <!-- Submit Button -->
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        // Toggle password visibility
+        function togglePassword() {
+            var passwordField = document.getElementById('password');
+            var confirmPasswordField = document.getElementById('confirm-password');
+            var showPasswordCheckbox = document.getElementById('show-password');
+            
+            if (showPasswordCheckbox.checked) {
+                passwordField.type = 'text';  // Show password
+                confirmPasswordField.type = 'text';  // Show confirm password
+            } else {
+                passwordField.type = 'password';  // Hide password
+                confirmPasswordField.type = 'password';  // Hide confirm password
+            }
+        }
+
+        // Validate if password and confirm password match
+        function validatePassword() {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission
+        }
+    </script>
+
+</body>
+</html>

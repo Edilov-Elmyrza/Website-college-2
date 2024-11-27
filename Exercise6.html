@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise6</title>
+</head>
+<body>
+    <a href="Exercise5.html">Previous Exercise</a>
+    <a href="index.html">Home page</a>
+    <a href="Exercise7.html">Next Exercise</a>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            width: 300px;
+        }
+        progress {
+            width: 100%;
+            height: 30px;
+            margin: 20px 0;
+        }
+        .status {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>File Upload Progress</h2>
+    
+    <!-- Label to show the progress percentage -->
+    <div class="status" id="progress-status">0% Completed</div>
+    
+    <!-- Progress bar element -->
+    <progress id="file-progress" value="0" max="100"></progress>
+    
+    <!-- Button to start the simulated upload -->
+    <button id="start-upload">Start Upload</button>
+</div>
+
+<script>
+    const progressBar = document.getElementById('file-progress');
+    const progressStatus = document.getElementById('progress-status');
+    const uploadButton = document.getElementById('start-upload');
+    
+    uploadButton.addEventListener('click', startUpload);
+    
+    function startUpload() {
+        let progress = 0;
+        
+        // Simulate file upload progress with an interval
+        const uploadInterval = setInterval(() => {
+            progress += 10; // Increase progress by 10% every second
+            progressBar.value = progress;
+            progressStatus.textContent = `${progress}% Completed`;
+            
+            // If upload reaches 100%, stop the interval
+            if (progress >= 100) {
+                clearInterval(uploadInterval);
+                progressStatus.textContent = 'Upload Completed!';
+            }
+        }, 1000); // Update progress every second
+    }
+</script>
+</body>
+</html>
